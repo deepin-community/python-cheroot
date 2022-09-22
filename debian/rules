@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+export PYBUILD_NAME=cheroot
+export PYBUILD_SYSTEM=custom
+export PYBUILD_CONFIGURE_ARGS=true
+export PYBUILD_BUILD_ARGS=true
+export PYBUILD_INSTALL_ARGS=mkdir -p {destdir}/usr/lib/python{version}/dist-packages && \
+	cp -r cheroot {destdir}/usr/lib/python{version}/dist-packages && \
+	sed -e 's/VERSION/$(DEB_VERSION_UPSTREAM:+ds=)/g' debian/cheroot.egg-info > \
+	{destdir}/usr/lib/python{version}/dist-packages/cheroot-$(DEB_VERSION_UPSTREAM:+ds=).egg-info
+export LC_ALL=C.UTF-8
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_test:
+	@echo "Tests disabled because of missing depends"

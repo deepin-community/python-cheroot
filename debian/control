@@ -1,0 +1,26 @@
+Source: python-cheroot
+Maintainer: Debian Python Team <team+python@tracker.debian.org>,
+Uploaders: Julien Puydt <jpuydt@debian.org>
+Section: python
+Priority: optional
+Standards-Version: 4.6.0
+Homepage: https://github.com/cherrypy/cheroot
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-packaging,
+               python3-pytest,
+               python3-setuptools,
+               python3-setuptools-scm-git-archive
+Rules-Requires-Root: no
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-cheroot.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-cheroot
+
+Package: python3-cheroot
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-jaraco.functools
+Description: Pure-Python HTTP server
+ Cheroot is the high-performance pure-Python HTTP server used by
+ CherryPy.
+ .
+ This package installs the library for Python 3.

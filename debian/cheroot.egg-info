@@ -1,0 +1,9 @@
+Metadata-Version: 1.2
+Name: cheroot
+Version: VERSION
+Summary: Pure Python HTTP Server
+Home-page: https://github.com/cherrypy/cheroot
+License: BSD-3-clause
+Author: CherryPy Team
+Description: UNKNOWN
+Platform: UNKNOWN
